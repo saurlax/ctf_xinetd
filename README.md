@@ -6,6 +6,8 @@
 
 Write your challenge in `pwn.c` and customize gcc compilation parameters in `build.sh`.
 
+The challenge code will be compiled in the container and deleted after compilation is complete.
+
 Flag will be automatically loaded to `/flag` from the environment variables.
 
 ## Build
@@ -13,8 +15,6 @@ Flag will be automatically loaded to `/flag` from the environment variables.
 ```bash
 docker build -t hello_pwn .
 ```
-
-DO NOT use `bin` as challenge's name
 
 ## Run
 
@@ -27,5 +27,5 @@ docker run -d -p 9999:9999 -e FLAG="flag{test_flag}" hello_pwn
 If you want to capture challenge traffic, just run `tcpdump` on the host. Here is an example.
 
 ```bash
-tcpdump -w helloworld.pcap -i eth0 port pub_port
+tcpdump -w hello_pwn.pcap -i eth0 port 9999
 ```
