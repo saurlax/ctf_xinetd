@@ -1,1 +1,3 @@
-gcc ./src/pwn.c -o ./bin/pwn
+#!/bin/sh
+gcc ./pwn.c -o ./pwn
+rm pwn.c

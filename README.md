@@ -4,7 +4,7 @@
 
 ## Configuration
 
-Write your challenge in `src/pwn.c` and customize gcc compilation parameters in `build.sh`.
+Write your challenge in `pwn.c` and customize gcc compilation parameters in `build.sh`.
 
 Flag will be automatically loaded to `/flag` from the environment variables.
 
