@@ -1,0 +1,1 @@
+gcc ./src/pwn.c -o ./bin/pwn

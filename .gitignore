@@ -1,3 +1,2 @@
-bin
-bin/flag
-bin/helloworld
+/bin/*
+!.gitkeep
