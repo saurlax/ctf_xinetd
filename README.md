@@ -4,27 +4,23 @@
 
 ## Configuration
 
-Put files to floder `bin`. They'll be copied to /home/ctf. **Update the flag** at the same time.
+Write your challenge in `src/pwn.c` and customize gcc compilation parameters in `build.sh`.
 
-Edit `ctf.xinetd`. replace `./helloworld` to your command.
-
-You can also edit `Dockerfile, ctf.xinetd, start.sh` to custom your environment.
+Flag will be automatically loaded to `/flag` from the environment variables.
 
 ## Build
 
 ```bash
-docker build -t "helloworld" .
+docker build -t hello_pwn .
 ```
 
-DO NOT use *bin* as challenge's name
+DO NOT use `bin` as challenge's name
 
 ## Run
 
 ```bash
-docker run -d -p "0.0.0.0:pub_port:9999" -h "helloworld" --name="helloworld" helloworld
+docker run -d -p 9999:9999 -e FLAG="flag{test_flag}" hello_pwn
 ```
-
-`pub_port` is the port you want to expose to the public network.
 
 ## Capture traffic
 
