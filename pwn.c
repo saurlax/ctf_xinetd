@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 void init() {
   setvbuf(stdout, NULL, _IONBF, 0);
@@ -9,19 +8,9 @@ void init() {
 }
 
 int main() {
-  char command[256];
   init();
 
   puts("Welcome to the test your nc challenge!");
-  while (1) {
-    printf("# ");
-    if (fgets(command, sizeof(command), stdin) != NULL) {
-      size_t len = strlen(command);
-      if (len > 0 && command[len - 1] == '\n') {
-        command[len - 1] = '\0';
-      }
-      system(command);
-    }
-  }
+  system("script -qc /bin/sh /dev/null");
   return 0;
 }
